@@ -1,0 +1,16 @@
+1 - mysql database with python
+2 - lot's of projects using the above learn concepts
+
+
+
+
+Other Skills:
+
+
+1 - Data Structures and Algorithms
+2 - Advance GitHub
+3 - Database and SQL
+4 - Networking Basics
+5 - Linux Maybe?
+6 - IDE shortcuts and tools
+7 - Debugging tools
