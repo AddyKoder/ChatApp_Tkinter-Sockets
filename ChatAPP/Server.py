@@ -159,7 +159,7 @@ def window_init():
 
 def add_client_label(name, c_id):
     def kick_client():
-        connections[c_id].send('You were kicked out'.encode(encoding))
+        connections[c_id].send('kick'.encode(encoding))
         connections[c_id].close()
 
     frame_color = 'cyan'
@@ -193,7 +193,7 @@ def add_chat_pane_components(chat_pane):
 
     def snd(e):
         global last_message
-        user_message = entry_section.get()
+        user_message = 'SERVER___'+entry_section.get()
         entry_section.delete(0,END)
         for c_id, client in connections.items():
             client.send(user_message.encode(encoding))
@@ -201,7 +201,7 @@ def add_chat_pane_components(chat_pane):
         message_frame = Frame(chat_section, bg=window_color)
         if last_message != 'SERVER':
             Label(message_frame, text = 'You : ', font='forte 18', bg=window_color, fg='red').pack(side=LEFT)
-        Label(message_frame, text=f'        {user_message}', font='forte 18', bg=window_color).pack(side=LEFT)
+        Label(message_frame, text=f'        {user_message.split("___")[1]}', font='forte 18', bg=window_color).pack(side=LEFT)
         message_frame.pack()
         messages.append(message_frame)
         last_message = 'SERVER'
